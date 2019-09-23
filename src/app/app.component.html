@@ -1,5 +1,5 @@
-<app-nav-bar></app-nav-bar>
-<div class="container-fluid"  [ngClass]="[navBarHidden ? 'navBarHide' : '', mobileNavBarShow ? 'navBarMobileShow' : '']">
+<app-nav-bar *ngIf="isUserActivate"></app-nav-bar>
+<div  *ngIf="isUserActivate" class="container-fluid"  [ngClass]="[navBarHidden ? 'navBarHide' : '', mobileNavBarShow ? 'navBarMobileShow' : '']">
   <div class="row">
       <div class="holder">
         <p-scrollPanel [style]="{width: '100%', height: 'calc(100vh - 52px)'}" styleClass="scrollpanel-bar">
@@ -8,3 +8,4 @@
       </div>
   </div>
 </div>
+<app-login *ngIf="!isUserActivate"></app-login>

@@ -9,12 +9,16 @@ import { CommonService } from './index.services'
 export class AppComponent implements OnInit {
   navBarHidden:boolean;
   mobileNavBarShow: boolean;
+  isUserActivate: boolean;
   constructor(private CommonService:CommonService) { }
 
   ngOnInit() {
 
     //update nav bar state for mobile & desktop
     this.CommonService.cast.subscribe(navBarHidden=> this.navBarHidden = navBarHidden);
-    this.CommonService.mobileNavcast.subscribe(mobileNavBarShow=> this.mobileNavBarShow = mobileNavBarShow);
+    this.CommonService.castMobileNav.subscribe(mobileNavBarShow=> this.mobileNavBarShow = mobileNavBarShow);
+
+    // update login state
+    this.CommonService.castUserActivate.subscribe(isUserActivate=> this.isUserActivate = isUserActivate);
   }
 }

@@ -8,8 +8,11 @@ export class CommonService {
 
   private navBarHidden = new BehaviorSubject<boolean>(false);
   private mobileNavBarShow = new BehaviorSubject<boolean>(false);
+  private isUserActivate = new BehaviorSubject<boolean>(false);
+
   cast = this.navBarHidden.asObservable();
-  mobileNavcast = this.mobileNavBarShow.asObservable();
+  castMobileNav = this.mobileNavBarShow.asObservable();
+  castUserActivate = this.isUserActivate.asObservable();
   
 
   constructor() { }
@@ -23,4 +26,11 @@ export class CommonService {
   mobileNavBarState(mobileNavBarShow){
     this.mobileNavBarShow.next(mobileNavBarShow);
   }
+
+  //update user login state
+  userActivateState(isUserActivate){
+    this.isUserActivate.next(isUserActivate);
+  }
+
+
 }

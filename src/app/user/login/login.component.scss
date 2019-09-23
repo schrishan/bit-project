@@ -1,0 +1,22 @@
+.login-pg-wrp{
+    height: 100vh;
+
+    .welcome-note-wrp{
+        background-image:url("/assets/images/welcome-bg.png");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .app-title{
+            color: #000;
+            font-size: 3.25rem;
+            text-shadow: 1px 1px 0px #fff;
+        }
+    }
+    .login-form-wrp{
+        -webkit-box-shadow: 3px 0 28px hsla(0,0%,45%,.1);
+        box-shadow: 3px 0 28px hsla(0,0%,45%,1);
+        background-color: #f1f3f7;
+        z-index: 1;
+    }
+
+}

@@ -8,6 +8,7 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewUserComponent } from './user/new-user/new-user.component';
+import { LoginComponent } from './user/login/login.component';
 
 import { CommonElementsModule } from './common/common-elements.module'
 import { routing } from './app.routing.module';
@@ -17,7 +18,8 @@ import { CommonService } from './index.services'
   declarations: [
     AppComponent,
     DashboardComponent,
-    NewUserComponent
+    NewUserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
