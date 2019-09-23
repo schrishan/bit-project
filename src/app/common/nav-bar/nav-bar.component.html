@@ -1,0 +1,67 @@
+<div class="container-fluid" [ngClass]="[navBarHidden ? 'navBarHide' : '', mobileNavBarShow ? 'navBarMobileShow' : '']">
+    <div class="row">
+        <div class="nav-wrp" >
+          <div class="user-img-wrp mt-4">
+            <div class="user-avatar">
+              <div class="user-img">
+              <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/61/612c1ebacd1188e51dfc2bb42f7af28799099469_full.jpg" alt="">
+              </div>
+              <span class="user-active-status"></span>
+            </div>
+            <div class="welcome-txt text-center mt-2">
+              <h4 class="mb-0">Welcome</h4>
+              <div class="user-name-txt">Johon Smith 
+                <span class="role-type-txt"> [ Admin ]</span>
+              </div>
+              </div>
+          </div>
+          
+        <div class="main_menu mt-4"> <!-- Side Navigation -->
+          <div class="menu_section">
+            
+            <ul class="nav side-menu">
+              <li class="par-menu-itm-wrp" *ngFor="let navItm of navData">
+                 <span class="par-menu-itm-click" *ngIf="navItm.level1Path" (click)="menuClick($event);"  routerLinkActive="active" routerLink="{{navItm.level1Path}}">{{navItm.level1Name}}</span>
+                  <span class="par-menu-itm-click" *ngIf="!navItm.level1Path" (click)="menuClick($event);" >{{navItm.level1Name}}</span>
+                <a class="par-menu-itm">
+                  <i class="material-icons ico-btn">{{navItm.level1IconName}}</i> 
+                  <span class="menu-txt">{{navItm.level1Name}}</span>
+                </a>
+                <ul class="nav child_menu">
+                  <li class="child-menu-itm-wrp" *ngFor="let subMenuItm of navItm.level2" >
+                    <a class="child-menu-itm" (click)="subMenuClick($event);" routerLinkActive="active" routerLink="{{subMenuItm.level2Path}}">{{subMenuItm.level2Name}}</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+  
+        </div>
+        <div class="header">
+          <div class="container-fluid my-2">
+            <div class="row">
+              <div class="col-xl-1 col-lg-1 col-md-1 col-3">
+                <div class="navbar-dark">
+                  <span class="non-mobile navBarToggleBtn navbar-toggler-icon cursor-pointer" (click)="navBarToggle()"> </span>
+                  <span class="mobile-only navBarToggleBtn navbar-toggler-icon cursor-pointer" (click)="navBarToggleMobile()"> </span>
+                </div>
+              </div>
+              <div class="col-xl-9 col-lg-8 col-md-7 col-3">
+                <div class="logo text-left">
+                  <img src="https://www.mycryptopedia.com/wp-content/uploads/2018/06/Monero-Logo.png" alt="sinappbiz">
+                </div>
+              </div>
+              <div class="col-xl-2  col-lg-3 col-md-4 col-6 text-right">
+                <div class="header-btns">
+                <span class="view-profile-btn ico-btn cursor-pointer ml-3"><i class="material-icons">person</i></span>
+                <span class="settings-btn ico-btn cursor-pointer ml-3"><i class="material-icons">settings_applications</i></span>
+                <span class="logout-btn ico-btn cursor-pointer ml-3"><i class="material-icons">exit_to_app</i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  

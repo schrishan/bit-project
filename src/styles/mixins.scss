@@ -1,0 +1,6 @@
+@mixin font_family {
+    font-family: 'Roboto Condensed', sans-serif !important;
+  } 
+  @mixin fz($px) {
+    font-size: ($px/16)+'rem';
+  } 

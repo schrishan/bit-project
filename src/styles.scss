@@ -1,0 +1,481 @@
+// @import url("../node_modules/primeicons/primeicons.css");
+// @import url("../node_modules/primeng/resources/themes/nova-colored/theme.css");
+// @import url("../node_modules/primeng/resources/primeng.min.css");
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
+@import './styles/variables';
+@import './styles/mixins';
+
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+body{
+  @include font_family;
+  overflow: hidden;
+  color: $dark_ash;
+  .ui-widget{
+    @include font_family;
+  }
+}
+
+.nav-wrp {
+  background: $dark_purple;
+  color: $white;
+  width: 225px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 0.25s;
+}
+
+.header {
+  height: 52px;
+  width: calc(100% - 225px);
+  background-color: $purple;
+  border-bottom: 1px solid $dark_purple;
+  position: fixed;
+  top:0;
+  left: 225px;
+  z-index: 10;
+  transition: 0.25s;
+}
+
+.navBarHide{
+  .header {
+    left:70px;
+    width: calc(100% - 70px);
+  }
+  .nav-wrp {
+    width: 70px;
+  }
+  .holder {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+  }
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    border: 3px solid $dark_purple;
+  }
+  .user-active-status {
+    top: 0;
+    width: 7px;
+    height: 7px;
+  }
+  .welcome-txt{
+    display: none;
+  } 
+  .main_menu a {
+    font-size: 0.8125rem;
+  }
+  .active{
+    .nav.child_menu{
+        max-height: 0;
+        overflow: hidden;
+      }
+  }
+} 
+
+.holder {
+  width: calc(100% - 225px);
+  margin-top: 52px;
+  margin-left: 225px;
+  min-height: calc(100vh - 52px);
+  background-color: rgba($dark_ash,0.1);
+  transition: 0.25s;
+}
+
+.logo {
+    height: 36px;
+    width: 150px;
+    margin: -7px auto 0;
+    img {
+      height: auto;
+      width: 100%;
+    }
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 2.25em;
+  height: 2.25em;
+}
+
+.ico-btn {
+  font-size: 1.5em;
+  color: rgba($white,0.5);
+}
+.cursor-pointer{
+  cursor: pointer
+}
+.mobile-only{
+  display: none;
+}
+.user-avatar {
+  width: 70px;
+  height: 70px;
+  background-color: $light_purple;
+  position: relative;
+  margin: 0 auto;
+  border: 5px solid $dark_purple;
+  box-shadow: 0 0 0px 1px $light_purple;
+  border-radius: 100%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.user-img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.user-active-status {
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: limegreen;
+  border-radius: 100%;
+  position: absolute;
+  right: 0;
+  top: 2px;
+}
+.header-btns .ico-btn{
+  vertical-align: bottom;
+}
+.user-name-txt {
+    font-size: 0.875rem;
+}
+.role-type-txt {
+    color: rgba($white,0.35);
+    font-size: 0.8125rem;
+}
+
+
+.main_menu a {
+    font-size: 0.875rem;
+    padding: 13px 15px 12px;
+    /* margin-bottom: 0.375rem; */
+    display: block;
+    position: relative;
+    color: #fff;
+}
+.main_menu a:hover{
+  text-decoration:none;
+  color: #fff;
+}
+.nav.side-menu li {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+span.menu-txt {
+    vertical-align: middle;
+    padding-left: 0.625rem;
+}
+.nav i.ico-btn {
+    vertical-align: middle;
+    font-size: 2rem;
+}
+.side-menu li{
+  position: relative;
+}
+.par-menu-itm-click{
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 1;
+  padding: 18px 15px;
+  opacity: 0;
+  font-size: 0.875rem;
+}
+.nav.child_menu{
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  background-color: rgba($purple,0.2);
+}
+.nav.child_menu li a{
+    padding-left: 60px;
+}
+.nav.side-menu li.active a.par-menu-itm{
+    background-color: rgba($black,0.35);
+    box-shadow: rgba($black,.25) 0 1px 0, inset rgba($white,.16) 0 1px 0;
+}
+.nav.child_menu li.active a {
+    background-color: rgba($purple,0.35);
+    box-shadow: rgba($black,.25) 0 1px 0, inset rgba($white,.16) 0 0 0;
+}
+.navBarHide .side-menu li a {
+    text-align: center;
+}
+.navBarHide span.menu-txt {
+    text-align: center;
+    padding-left: 0;
+}
+.navBarHide .nav.child_menu{
+  max-height: 0;
+  overflow: hidden;
+}
+.navBarHide .nav i.ico-btn {
+    display: block;
+}
+.navBarHide a.par-menu-itm {
+    padding-left: 0;
+    padding-right: 0;
+}
+.navBarHide .nav.child_menu li a{
+    padding-left: 0;
+}
+.active{
+  .nav.child_menu{
+      max-height: 500px;
+      overflow: hidden;
+      transition: all 0.5s;
+    }
+}
+.nav.child_menu a:after {
+    width: 1px;
+    height: 100%;
+    background-color: rgba($white,0.15);
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 0;
+}
+
+.nav.child_menu a:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 22px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    //background-color: #B280D5;
+    background-color: rgba($red_purple,1);
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.nav.child_menu li.active a:before {
+  background-color: $white;
+}
+
+.scrollpanel-bar .ui-scrollpanel-bar {
+    background-color: rgba($purple,0.2);
+    transition: background-color .3s;
+}
+
+.window-wrp{
+  background-color: $white;
+  border: 1px solid rgba($purple,0.25);
+  box-shadow: 1px 1px 5px rgba($dark_ash,0.1);
+  border-radius: 3px;
+  .window-header{
+    background-color: rgba($purple,0.25);
+    .header-title,
+    .window-close-btn{
+      display: flex;
+      align-items: center;
+      color: $purple;
+      font-size: 1rem;
+      position: relative;
+      .bc-close-icn{
+        position: absolute;
+        right: 1rem;
+        top:0;
+      }
+      .menu-txt{
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+.app-breadcrumb-wrp{
+  background-color: $white;
+  border: 1px solid rgba($dark_ash,0.2);
+  box-shadow: 1px 1px 5px rgba($dark_ash,0.1);
+  border-radius: 3px;
+  .app-breadcrumb{
+      display: flex;
+      align-items: center; 
+      .bc-home-icn{
+        margin-top: -5px;
+      }
+    }
+    .btn-link-icon{
+      vertical-align: bottom;
+    }
+  .breadcrumb-icon{
+    color: $purple;
+  }
+  .menu-txt{
+    color: rgba($purple,1);
+    font-size: 1rem;
+    &.active-bc-lnk{
+      color:$black;
+    }
+  }
+}
+.secondary-btn{
+  border: 1px solid $purple;
+  background-color: rgba($light_purple, 0.2);
+  &:hover{
+    background-color: transparent;
+    border: 1px solid $purple;
+  }
+}
+@media only screen and (max-width:767px){
+  .non-mobile{
+    display: none;
+  }
+  .mobile-only{
+    display: block;
+  }
+
+  .header, .navBarHide .header {
+    width: 100%;
+    left: 0;
+    z-index: 101;
+  }
+  .nav-wrp,.navBarHide .nav-wrp {
+    left: -260px;
+    width: 260px;
+    z-index: 100;
+  }
+  .navBarMobileShow .nav-wrp{
+    left: 0;
+  }
+  .holder,.navBarHide .holder {
+    width: 100%;
+    margin-left: 0;
+  }
+  .ico-btn {
+    font-size: 1.5em;
+  }
+  .navbar-toggler-icon {
+    width: 2em;
+    height: 2em;
+  }
+  .header {
+    height: 48px;
+  }
+  .holder {
+    margin-top: 48px;
+  }  
+  .user-img-wrp{
+    padding-top: 50px;
+  }
+  .navBarHide .welcome-txt{
+    display: block;
+  }
+  .navBarHide .user-avatar,.user-avatar {
+    width: 50px;
+    height: 50px;
+  }
+  .navBarHide .user-active-status,.user-active-status {
+    top: -2px;
+    width: 7px;
+    height: 7px;
+  }
+  .logo {
+    height: 40px;
+    width: 38px;
+    overflow: hidden;
+    margin: -2px auto 0;
+}
+.logo img{
+    height: 100%;
+    width: auto;
+}
+.navBarHide .side-menu li a {
+    text-align: left;
+}
+.navBarHide span.menu-txt {
+    text-align: left;
+    padding-left: 0.625rem;
+}
+.navBarHide .nav.child_menu{
+  display: inline-block;
+}
+.navBarHide .nav i.ico-btn {
+    display: inline-block;
+}
+.navBarHide a.par-menu-itm {
+    padding: 13px 15px 12px;
+}
+.navBarHide .nav.child_menu li a{
+    padding-left: 36px;
+}
+.navBarHide .main_menu a {
+    font-size: 0.875rem;
+}
+}
+
+
+@media only screen and (min-width:1024px){
+  .ico-btn:hover {
+    color: rgb(143, 3, 3);
+  }
+  .nav.side-menu li:hover a.par-menu-itm {
+    background-color: rgba($black,0.35);
+    box-shadow: rgba($black,0.25) 0 1px 0, inset rgba($white,0.16) 0 1px 0;
+  }
+  .nav.child_menu li:hover a {
+      background-color: rgba($purple,0.15);
+      box-shadow: rgba($black,0.25) 0 1px 0, inset rgba($white,0.16) 0 0 0;
+  }
+  .secondary-btn{
+    &:hover{
+      background-color: rgba($light_purple,0);
+      border: 1px solid $purple;
+    }
+  }
+  .bc-close-icn{
+    &:hover{
+      color: rgba($purple,0.5);
+    }
+  }
+}
+
+/*
+https://www.urbanui.com/bootstrap-admin-templates/
+
+
+*/
